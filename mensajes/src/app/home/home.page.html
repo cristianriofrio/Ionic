@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Semana 6
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-item>
+    <ion-button (click)="irp2n()" color="success">Nav Controller</ion-button>
+    <ion-button (click)="irp2r()" color="success">Router</ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-button (click)="setOpen(true)">Modal Basico</ion-button>
+    <ion-button (click)="llamarModal()">Modal Pagina 2</ion-button>
+    <ion-button (click)="mostrarToast('Hola Mundo', 2000)">Toast</ion-button>
+  </ion-item>
+
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Esta es un model de prueba
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="opciones" (ionChange)="verificarRadio()">
+      <ion-item>
+        <ion-radio value="Amigos" checked>Amigos</ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-radio value="Familia" checked>Familia</ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-radio value="Conocidos" checked>Conocidos</ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>

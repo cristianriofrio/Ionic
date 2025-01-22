@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Operaciones
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input label="Numero 1" type="number" [(ngModel)]="txt_n1" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Numero 2" type="number" [(ngModel)]="txt_n2" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button color="primary" expand="block" fill="outline" (click)="sumar()">Sumar</ion-button>
+    <ion-button color="primary" expand="block" fill="outline" (click)="restar()">Restar</ion-button>
+    <ion-button color="primary" expand="block" fill="outline" (click)="multiplicar()">Mutiplicar</ion-button>
+    <ion-button color="primary" expand="block" fill="outline" (click)="dividir()">Dividir</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="txt_r"></ion-input>
+  </ion-item>
+</ion-content>

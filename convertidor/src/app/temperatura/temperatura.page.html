@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>CONVERTIDOR DE TEMPERATURA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label class="custom-label">MEDIDA:</ion-label>
+    <ion-input [(ngModel)]="valor" type="number" placeholder="Ej: 100" (ionChange)="calcular()"></ion-input>
+  </ion-item>
+
+  <div class="checkbox-container">
+    <div class="checkbox-column">
+      <ion-list>
+        <ion-list-header>
+          <ion-label>DE:</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Celsius</ion-label>
+          <ion-checkbox [(ngModel)]="deCelsius" (ionChange)="calcular()"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Fahrenheit</ion-label>
+          <ion-checkbox [(ngModel)]="deFahrenheit" (ionChange)="calcular()"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Kelvin</ion-label>
+          <ion-checkbox [(ngModel)]="deKelvin" (ionChange)="calcular()"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="checkbox-column">
+      <ion-list>
+        <ion-list-header>
+          <ion-label>A:</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Celsius</ion-label>
+          <ion-checkbox [(ngModel)]="aCelsius" (ionChange)="calcular()"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Fahrenheit</ion-label>
+          <ion-checkbox [(ngModel)]="aFahrenheit" (ionChange)="calcular()"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Kelvin</ion-label>
+          <ion-checkbox [(ngModel)]="aKelvin" (ionChange)="calcular()"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+  <ion-item>
+    <ion-label class="custom-label">RESULTADO:</ion-label>
+    <ion-input [value]="resultado" readonly class="custom-result"></ion-input>
+  </ion-item>
+
+ <div class="ion-padding">
+  <ion-button expand="block" (click)="goToPage('/')" color="primary">
+    Regresar al Inicio
+  </ion-button>
+</div>
+</ion-content>

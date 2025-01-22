@@ -1,0 +1,25 @@
+
+.custom-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 8px;
+    color: black;
+  }
+  
+  .custom-result::part(native) {
+    color: blue;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .select-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+  }
+  
+  ion-item {
+    flex: 1;
+    margin: 0 8px;
+  }
+  

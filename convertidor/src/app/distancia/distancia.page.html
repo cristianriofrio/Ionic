@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>CONVERTIDOR DE DISTANCIA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label class="custom-label">MEDIDA:</ion-label>
+    <ion-input [(ngModel)]="valor" type="number" placeholder="Ej: 100" (ionChange)="calcular()"></ion-input>
+  </ion-item>
+
+  <div class="select-container">
+    <ion-item>
+      <ion-label>DE:</ion-label>
+      <ion-select [(ngModel)]="unidadEntrada" (ionChange)="calcular()" interface="popover" placeholder="Seleccionar">
+        <ion-select-option value="km">Kilómetros</ion-select-option>
+        <ion-select-option value="m">Metros</ion-select-option>
+        <ion-select-option value="cm">Centímetros</ion-select-option>
+        <ion-select-option value="mm">Milímetros</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>A:</ion-label>
+      <ion-select [(ngModel)]="unidadSalida" (ionChange)="calcular()" interface="popover" placeholder="Seleccionar">
+        <ion-select-option value="km">Kilómetros</ion-select-option>
+        <ion-select-option value="m">Metros</ion-select-option>
+        <ion-select-option value="cm">Centímetros</ion-select-option>
+        <ion-select-option value="mm">Milímetros</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <ion-item>
+    <ion-label class="custom-label">RESULTADO:</ion-label>
+    <ion-input [value]="resultado" readonly class="custom-result"></ion-input>
+  </ion-item>
+
+ <div class="ion-padding">
+  <ion-button expand="block" (click)="goToPage('/')" color="primary">
+    Regresar al Inicio
+  </ion-button>
+</div>
+</ion-content>

@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>CONVERTIDOR DE PESO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-item>
+    <ion-label class="custom-label">MEDIDA:</ion-label>
+    <ion-input [(ngModel)]="valor" type="number" placeholder="Ej: 100" (ionChange)="calcular()"></ion-input>
+  </ion-item>
+
+  
+  <div class="radio-container">
+   
+    <ion-radio-group [(ngModel)]="unidadEntrada" (ionChange)="calcular()">
+      <ion-list>
+        <ion-list-header>
+          <ion-label>DE:</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Tonelada</ion-label>
+          <ion-radio slot="start" value="ton"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Kilogramo</ion-label>
+          <ion-radio slot="start" value="kg"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Libra</ion-label>
+          <ion-radio slot="start" value="lb"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Gramo</ion-label>
+          <ion-radio slot="start" value="g"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </ion-radio-group>
+
+    <ion-radio-group [(ngModel)]="unidadSalida" (ionChange)="calcular()">
+      <ion-list>
+        <ion-list-header>
+          <ion-label>A:</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Tonelada</ion-label>
+          <ion-radio slot="start" value="ton"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Kilogramo</ion-label>
+          <ion-radio slot="start" value="kg"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Libra</ion-label>
+          <ion-radio slot="start" value="lb"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Gramo</ion-label>
+          <ion-radio slot="start" value="g"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </ion-radio-group>
+  </div>
+
+  <ion-item>
+    <ion-label class="custom-label">RESULTADO:</ion-label>
+    <ion-input [value]="resultado" readonly class="custom-result"></ion-input>
+  </ion-item>
+
+
+   <div class="ion-padding">
+    <ion-button expand="block" (click)="goToPage('/')" color="primary">
+      Regresar al Inicio
+    </ion-button>
+  </div>
+</ion-content>

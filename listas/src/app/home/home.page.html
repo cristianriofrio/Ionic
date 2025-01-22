@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Listas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let n of numeros" (click)="mostrar(n)">
+      <ion-label>{{n}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-card>
+    Usted selecciono:
+    <ion-input type="text" [(ngModel)]="resultado"></ion-input>
+  </ion-card>
+</ion-content>
