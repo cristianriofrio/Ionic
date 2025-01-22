@@ -1,6 +1,5 @@
 import { AccesoService } from '../servicio/acceso.service';
 import { Component } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
 
 
 @Component({
@@ -12,8 +11,7 @@ import { LoadingController } from '@ionic/angular';
 export class HomePage {
 txt_usuario: string = "";
 txt_clave: string = "";  
-  constructor( private loadingCtrl: LoadingController,
-               private servicio: AccesoService
+  constructor( private servicio: AccesoService
 
   ) {}
 
