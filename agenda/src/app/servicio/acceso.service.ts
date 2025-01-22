@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AccesoService {
-  server: string="http://localhost/WAgenda/agenda.php";
+  server: string="http://localhost/Wagenda25/agenda.php";
 
   constructor(
     public ToastCtrl: ToastController,
