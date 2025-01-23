@@ -1,6 +1,6 @@
-import { AccesoService } from '../servicio/acceso.service';
 import { Component } from '@angular/core';
-
+import { LoadingController, NavController } from '@ionic/angular';
+import { AccesoService } from '../servicio/acceso.service';
 
 @Component({
   selector: 'app-home',
@@ -8,33 +8,33 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
   standalone: false,
 })
+
 export class HomePage {
 txt_usuario: string = "";
-txt_clave: string = "";  
-  constructor( private servicio: AccesoService
+txt_clave: string = "";
 
+  constructor( 
+    private navCtrl: NavController,
+    private servicio: AccesoService
   ) {}
 
   login()
   {
     let datos={
       accion:'login',
-      usuario:this.txt_usuario,
-      clave:this.txt_clave
+      usuario: this.txt_usuario,
+      clave: this.txt_clave
     }
     this.servicio.postData(datos).subscribe((res:any)=>{
-      if(res.estado)
-      {
-        this.servicio.showToast("Encontro persona",3000);
-
-      }
-      else
-      {
-        this.servicio.showToast("No existe esa persona",3000);
+      if(res.estado){
+       this.servicio.createSesion('idpersona', res.persona.codigo)
+       this.servicio.createSesion('persona', res.persona.nombre)
+       this.navCtrl.navigateRoot(['/menu'])
+      }else{
+        this.servicio.showToast("No existe persona", 3000)
       }
     });
   }
-  
 
   crearCuenta()
   {

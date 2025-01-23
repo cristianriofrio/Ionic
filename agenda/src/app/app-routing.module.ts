@@ -23,6 +23,14 @@ const routes: Routes = [
     path: 'rclave',
     loadChildren: () => import('./rclave/rclave.module').then( m => m.RclavePageModule)
   },
+  {
+    path: 'cuenta',
+    loadChildren: () => import('./cuenta/cuenta.module').then( m => m.CuentaPageModule)
+  },
+  {
+    path: 'rclave',
+    loadChildren: () => import('./rclave/rclave.module').then( m => m.RclavePageModule)
+  },
 ];
 
 @NgModule({
