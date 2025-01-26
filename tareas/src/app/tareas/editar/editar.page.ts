@@ -40,5 +40,8 @@ export class EditarPage implements OnInit {
       this.navCtrl.navigateForward('/lista'); // Redirect to the list page
     }
   }
-
-}
+  async cancelar() {
+    // Navegar a la pantalla principal (modifica la ruta según sea necesario)
+    this.navCtrl.navigateForward('/lista'); // Redirect to the list page
+    }
+  }

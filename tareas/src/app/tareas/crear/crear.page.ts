@@ -43,4 +43,9 @@ export class CrearEliminarPage implements OnInit {
     await this.tareasService.deleteTarea(index);
     this.tareas = await this.tareasService.getTareas();
   }
+  
+  async cancelar() {
+    // Navegar a la pantalla principal (modifica la ruta según sea necesario)
+    this.navCtrl.navigateForward('/lista'); // Redirect to the list page
+    }
 }

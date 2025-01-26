@@ -1,17 +1,11 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>editar</ion-title>
+  <ion-toolbar class="green-background">
+    <ion-title>EDITAR TAREA:</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Editar Tarea</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-card>
+   <ion-card>
     <ion-card-content>
       <!-- Cuando se cargue el formulario se ejecuta la funcion -->
       <form (ngSubmit)="guardarCambios()"> 
@@ -40,7 +34,8 @@
         <ion-footer>
           <ion-toolbar>
             <ion-buttons slot="end">
-              <ion-button expand="full" type="submit" color="primary">Guardar Cambios</ion-button>
+              <ion-button expand="full" type="submit" color="primary">Guardar</ion-button>
+              <ion-button expand="full" color="danger" (click)="cancelar()">Cancelar</ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-footer>

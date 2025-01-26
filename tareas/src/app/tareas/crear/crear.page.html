@@ -1,17 +1,11 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Crear</ion-title>
+  <ion-toolbar class="green-background">
+    <ion-title>CREAR TAREA:</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Crear Tarea</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    
+  <ion-card>   
     <ion-card-content>
       <form (ngSubmit)="crearTarea()">
         <!-- Campo de Título -->
@@ -54,9 +48,8 @@
         <ion-footer>
           <ion-toolbar>
             <ion-buttons slot="end">
-              <ion-button expand="full" type="submit" color="primary">
-                Guardar Tarea
-              </ion-button>
+              <ion-button expand="full" type="submit" color="primary">Guardar</ion-button>
+              <ion-button expand="full" color="danger" (click)="cancelar()">Cancelar</ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-footer>
