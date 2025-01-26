@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>editar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Editar Tarea</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-content>
+      <!-- Cuando se cargue el formulario se ejecuta la funcion -->
+      <form (ngSubmit)="guardarCambios()"> 
+        <!-- Campo de Título -->
+        <ion-item>
+          <ion-label position="stacked">Título</ion-label>
+          <ion-input [(ngModel)]="tarea.titulo" name="titulo" type="text" required></ion-input>
+        </ion-item>
+
+        <!-- Campo de Descripción -->
+        <ion-item>
+          <ion-label position="stacked">Descripción</ion-label>
+          <ion-textarea [(ngModel)]="tarea.descripcion" name="descripcion" required></ion-textarea>
+        </ion-item>
+
+        <!-- Selección de Estado -->
+        <ion-item>
+          <ion-label>Estado</ion-label>
+          <ion-select [(ngModel)]="tarea.estado" name="estado">
+            <ion-select-option value="pendiente">Pendiente</ion-select-option>
+            <ion-select-option value="en-progreso">En Progreso</ion-select-option>
+            <ion-select-option value="completada">Completada</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-footer>
+          <ion-toolbar>
+            <ion-buttons slot="end">
+              <ion-button expand="full" type="submit" color="primary">Guardar Cambios</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-footer>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

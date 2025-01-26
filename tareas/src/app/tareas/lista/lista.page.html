@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+    <!-- Botón Agregar -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="primary" (click)="crearTarea()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </div>
+  <!-- Lista -->
+  <ion-header>
+      <ion-toolbar>
+        <ion-title>Lista de Tareas</ion-title>
+      </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Tareas Guardadas</ion-label>
+    </ion-list-header>
+    <!-- Iterar en los tareas  guardadas -->
+    <ion-item *ngFor="let tarea of tareas; let i=index" (click)="editarTarea(i)">
+      <ion-label text-wrap>
+        <h2>{{tarea.titulo}}</h2>
+        <p>{{tarea.descripcion}}</p>
+        <p><strong>Estado: </strong> {{tarea.estado}}</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <!-- Botón de eliminar -->
+        <ion-button color="danger" (click)="eliminarTarea(i)">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

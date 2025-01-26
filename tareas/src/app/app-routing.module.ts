@@ -8,16 +8,24 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'lista',
     pathMatch: 'full'
   },
   {
-    path: 'services',
-    loadChildren: () => import('./services/services.module').then( m => m.ServicesPageModule)
+    path: 'lista',
+    loadChildren: () => import('./tareas/lista/lista.module').then( m => m.ListaPageModule)
   },
   {
-    path: 'tareas',
-    loadChildren: () => import('./tareas/tareas.module').then( m => m.TareasPageModule)
+    path: 'crear',
+    loadChildren: () => import('./tareas/crear/crear.module').then( m => m.CrearEliminarPageModule)
+  },
+  {
+    path: 'detalles',
+    loadChildren: () => import('./tareas/detalles/detalles.module').then( m => m.DetallesPageModule)
+  },
+  {
+    path: 'editar/:id',
+    loadChildren: () => import('./tareas/editar/editar.module').then( m => m.EditarPageModule)
   },
 ];
 
