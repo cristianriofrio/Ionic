@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
-import { CuentaPageRoutingModule } from './cuenta-routing.module';
-import { CuentaPage } from './cuenta.page';
+
+import { IngresoTokenPageRoutingModule } from './ingreso-token-routing.module';
+
+import { IngresoTokenPage } from './ingreso-token.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CuentaPageRoutingModule
+    IngresoTokenPageRoutingModule
   ],
-  declarations: [CuentaPage]
+  declarations: [IngresoTokenPage]
 })
-export class CuentaPageModule {}
+export class IngresoTokenPageModule {}

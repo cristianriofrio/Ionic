@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { LoadingController, NavController } from '@ionic/angular';
+import { LoadingController, ModalController, NavController } from '@ionic/angular';
 import { AccesoService } from '../servicio/acceso.service';
+import { CuentaPage } from '../cuenta/cuenta.page';
+import { RclavePage } from '../rclave/rclave.page';
+import { IngresoTokenPage } from '../ingreso-token/ingreso-token.page';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +18,8 @@ txt_clave: string = "";
 
   constructor( 
     private navCtrl: NavController,
-    private servicio: AccesoService
+    private servicio: AccesoService,
+    private modalCtrl: ModalController
   ) {}
 
   login()
@@ -27,6 +31,7 @@ txt_clave: string = "";
     }
     this.servicio.postData(datos).subscribe((res:any)=>{
       if(res.estado){
+        //Almacena localmente los datos del usuario
        this.servicio.createSesion('idpersona', res.persona.codigo)
        this.servicio.createSesion('persona', res.persona.nombre)
        this.navCtrl.navigateRoot(['/menu'])
@@ -36,14 +41,28 @@ txt_clave: string = "";
     });
   }
 
-  crearCuenta()
-  {
-
+  async ingresarToken(){
+    const modal = await this.modalCtrl.create({
+      component: IngresoTokenPage
+    });
+    return await modal.present();
+    
   }
 
-  reestablecerClave()
+  async crearCuenta()
   {
+    const modal = await this.modalCtrl.create({
+      component: CuentaPage
+    });
+    return await modal.present();
+  }
 
+  async reestablecerClave()
+  {
+    const modal = await this.modalCtrl.create({
+      component: RclavePage
+    });
+    return await modal.present();
   }
 
 }
