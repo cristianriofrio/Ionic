@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AccesoService {
-  server: string="http://localhost/wsAgenda25Ionic/agenda.php";//API
+  server: string="http://localhost/Wagenda25/agenda.php";//API
 
   constructor(
     public ToastCtrl: ToastController,

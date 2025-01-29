@@ -5,6 +5,7 @@ import { AuthService } from '../servicio/auth.service';
 import { ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-ingreso-token',
   templateUrl: './ingreso-token.page.html',
