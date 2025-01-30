@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController, NavController } from '@ionic/angular';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { AccesoService } from '../servicio/acceso.service';
-import { AuthService } from '../servicio/auth.service';
 
 @Component({
   selector: 'app-rclave',
@@ -9,35 +8,54 @@ import { AuthService } from '../servicio/auth.service';
   styleUrls: ['./rclave.page.scss'],
   standalone: false,
 })
-export class RclavePage implements OnInit {
-
-  email: string = "";
+export class RclavePage {
+  cedula: string = "";
+  palabraClave: string = ""; // Ahora es token_recuperacion en la BD
+  nuevaClave: string = "";
+  credencialesVerificadas: boolean = false;
 
   constructor(
     private navCtrl: NavController,
-    private authService: AuthService,
-    private modalCtrl: ModalController
-  ) { }
+    private servicio: AccesoService
+  ) {}
 
-  ngOnInit() {
+  // Verifica la cédula y la palabra clave antes de permitir cambiar la contraseña
+  verificarCredenciales() {
+    let datos = {
+      accion: 'verificarCredenciales',
+      cedula: this.cedula,
+      palabraClave: this.palabraClave
+    };
+
+    this.servicio.postData(datos).subscribe((res: any) => {
+      if (res.estado) {
+        this.credencialesVerificadas = true;
+      } else {
+        this.servicio.showToast("Cédula o palabra clave incorrecta.", 3000);
+      }
+    });
   }
 
-  recoverPassword() {
-    this.authService.recoverPassword(this.email).subscribe(
-      (response: any) => {
-        if (response.estado) {
-          alert('Se ha enviado un correo con el enlace para restablecer la contraseña.');
-          this.modalCtrl.dismiss();
-        } else {
-          alert(response.mensaje);
-          this.modalCtrl.dismiss();
-        }
-      },
-      (error) => {
-        console.error('Error al solicitar la recuperación', error);
-        alert('Ocurrió un error. Inténtalo nuevamente.');
-        this.modalCtrl.dismiss();
+  // Cambia la contraseña en la base de datos
+  actualizarClave() {
+    if (this.nuevaClave.length < 4) {
+      this.servicio.showToast("La nueva clave debe tener al menos 4 caracteres.", 3000);
+      return;
+    }
+
+    let datos = {
+      accion: 'actualizarClave',
+      cedula: this.cedula,
+      nuevaClave: this.nuevaClave
+    };
+
+    this.servicio.postData(datos).subscribe((res: any) => {
+      if (res.estado) {
+        this.servicio.showToast("Contraseña actualizada con éxito.", 3000);
+        this.navCtrl.navigateRoot('/home');
+      } else {
+        this.servicio.showToast("Error al actualizar la contraseña.", 3000);
       }
-    );
+    });
   }
 }

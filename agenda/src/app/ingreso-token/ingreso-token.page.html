@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Ingreso de codigo de recuperacion</ion-title>
+    <ion-title>Recuperacion</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-card>
-    <ion-input label=" Ingrese el token: " [(ngModel)]="token"></ion-input>
+    <ion-input label=" Codigo: " [(ngModel)]="token"></ion-input>
     <ion-button class="success" expand="block" (click)="validateToken()">Validar codigo</ion-button>
     <ion-button class="success" expand="block" (click)="cancelar()">Regresar</ion-button>
   </ion-card>
@@ -14,11 +14,11 @@
   <div *ngIf="isTokenValid; else invalidToken">
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Nueva contraseña</ion-card-title>
+        <ion-card-title></ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label position="stacked">Nueva Contraseña</ion-label>
+          <ion-label position="stacked">Nueva Clave</ion-label>
           <ion-input
             type="password"
             [(ngModel)]="newPassword"
@@ -36,7 +36,7 @@
         <ion-card-title>Codigo Inválido</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>El enlace para restablecer tu contraseña no es válido o ha expirado.</p>
+        <p>El enlace no es válido o ha expirado.</p>
         <ion-button expand="full" routerLink="/recover-password">
           Solicitar nuevo enlace
         </ion-button>

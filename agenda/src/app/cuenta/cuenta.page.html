@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>cuenta</ion-title>
+    <ion-title>Crear Cuenta</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-item>
-    <ion-input label="Cedula: "type="text" [(ngModel)]="txt_cedula" (focusout)="vcedula();"></ion-input>
+    <ion-input label="Cédula: " type="text" [(ngModel)]="txt_cedula" (focusout)="vcedula();"></ion-input>
   </ion-item>
   <ion-item>
     <ion-input label="Nombre: " type="text" [(ngModel)]="txt_nombre"></ion-input>
@@ -15,17 +15,20 @@
     <ion-input label="Apellido: " type="text" [(ngModel)]="txt_apellido"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input label="Correo: " type="text" [(ngModel)]="txt_correo"></ion-input>
+    <ion-input label="Correo: " type="email" [(ngModel)]="txt_correo"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input label="Clave: " type="text" [(ngModel)]="txt_clave" (focusout)="vclave()"></ion-input>
+    <ion-input label="Clave: " type="password" [(ngModel)]="txt_clave" (focusout)="vclave()"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input label="Confirmar clave: " type="text" [(ngModel)]="txt_cclave" (focusout)="vclave()"></ion-input>
+    <ion-input label="Confirmar clave: " type="password" [(ngModel)]="txt_cclave" (focusout)="vclave()"></ion-input>
     <ion-label color="danger">{{mensaje}}</ion-label>
   </ion-item>
   <ion-item>
-    <ion-button class="success" expand="block" (click)="registrar()">Registar</ion-button>
+    <ion-input label="Palabra Clave: " type="text" [(ngModel)]="txt_palabraClave"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button class="success" expand="block" (click)="registrar()">Registrar</ion-button>
     <ion-button class="secondary" expand="block" (click)="cancelar()">Cancelar</ion-button>
   </ion-item>
 </ion-content>

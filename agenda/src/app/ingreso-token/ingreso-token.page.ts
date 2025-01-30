@@ -36,10 +36,10 @@ export class IngresoTokenPage implements OnInit {
     this.authService.validateToken(this.token).subscribe(
       (response: any) => {
         if (response.estado) {
-          this.isTokenValid = true; // Si el token es válido, muestra el formulario
+          this.isTokenValid = true; 
         } else {
           alert(response.mensaje);
-          this.isTokenValid = false; // Oculta el formulario si el token no es válido
+          this.isTokenValid = false; 
         }
       },
       (error) => {
