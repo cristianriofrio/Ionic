@@ -5,18 +5,18 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- Verificar cédula y palabra clave -->
+
   <form *ngIf="!credencialesVerificadas" (submit)="verificarCredenciales()">
     <ion-item>
-      <ion-input label="Cédula: " type="text" [(ngModel)]="cedula" name="cedula"></ion-input>
+      <ion-input label="Cédula:" type="text" [(ngModel)]="cedula" name="cedula"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Palabra clave: " type="password" [(ngModel)]="palabraClave" name="palabraClave"></ion-input>
+      <ion-input label="Palabra Clave:" type="password" [(ngModel)]="palabraClave" name="palabraClave"></ion-input>
     </ion-item>
     <ion-button expand="block" type="submit">Verificar</ion-button>
   </form>
 
-  <!-- Cambiar la contraseña -->
+  
   <form *ngIf="credencialesVerificadas" (submit)="actualizarClave()">
     <ion-item>
       <ion-input label="Nueva clave: " type="password" [(ngModel)]="nuevaClave" name="nuevaClave"></ion-input>

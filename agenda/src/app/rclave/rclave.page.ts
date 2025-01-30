@@ -51,10 +51,10 @@ export class RclavePage {
 
     this.servicio.postData(datos).subscribe((res: any) => {
       if (res.estado) {
-        this.servicio.showToast("Contraseña actualizada con éxito.", 3000);
+        this.servicio.showToast("Actualizada con éxito.", 3000);
         this.navCtrl.navigateRoot('/home');
       } else {
-        this.servicio.showToast("Error al actualizar la contraseña.", 3000);
+        this.servicio.showToast("Error al actualizar", 3000);
       }
     });
   }
