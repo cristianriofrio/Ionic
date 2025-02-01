@@ -48,6 +48,11 @@ export class MenuPage implements OnInit {
       console.error('Error al cargar los datos de la sesión', error);
     }
   }
+nuevo()
+{
+  this.navCtrl.navigateRoot(['contacto']);
+}
+
 
   lcontactos() 
   {

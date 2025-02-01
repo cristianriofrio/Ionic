@@ -30,8 +30,11 @@
     </ion-toolbar>
   </ion-header>
 
- <ion-fab>
-  
+ <ion-fab slot="fixed" vertical="top" horizontal="end">
+  <ion-fab-button (click)="nuevo();">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+
  </ion-fab>
 
   <ion-content [fullscreen]="true">
