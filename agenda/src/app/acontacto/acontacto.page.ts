@@ -72,5 +72,7 @@ this.servicio.postData(datos).subscribe((res:any)=>{
  }
 });
 }
-cancelar(){}
+cancelar(){
+  this.navCtrl.navigateRoot('/menu');
+}
 }
