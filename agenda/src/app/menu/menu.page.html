@@ -30,7 +30,10 @@
     </ion-toolbar>
   </ion-header>
 
- 
+ <ion-fab>
+  
+ </ion-fab>
+
   <ion-content [fullscreen]="true">
     <ion-list>
       <ion-item-sliding *ngFor="let fila of contactos"> 
@@ -39,8 +42,8 @@
           <img src="assets/imgs/person.png">
         </ion-avatar>
         <ion-label>
-          <b>Nombre:</b> {{fila.nombre}} <br>
-          <b>Telefono:</b> {{fila.telefono}}
+          <b> Nombre:</b> {{fila.nombre}} <br>
+          <b> Telefono:</b> {{fila.telefono}}
         </ion-label>
       </ion-item>
     <ion-item-options>
