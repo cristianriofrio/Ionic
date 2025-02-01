@@ -5,6 +5,7 @@ import { AccesoService } from '../servicio/acceso.service';
   selector: 'app-acontacto',
   templateUrl: './acontacto.page.html',
   styleUrls: ['./acontacto.page.scss'],
+  standalone: false,
 })
 export class AcontactoPage implements OnInit {
   contacto: any =[];
@@ -47,4 +48,6 @@ cargarDatos()
   ngOnInit() {
   }
 
+guardar(){}
+cancelar(){}
 }

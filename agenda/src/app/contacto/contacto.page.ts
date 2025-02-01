@@ -27,9 +27,20 @@ mensaje:string="";
       this.cod_persona=res;
     });
   }
- verificarnumero(){}
+ verificarnumero()
+ {
+  let datos={
+    "accion":"vtelefono",
+    "cod_persona":this.cod_persona,
+    "telefono":this.txt_telefono
+  }
+  this.servicio.postData(datos).subscribe((res:any)=>{
+    this.mensaje=res.mensaje;
+   });
+ }
  
- cancelar(){}
+ cancelar()
+ {}
 
  guardar() 
   {
