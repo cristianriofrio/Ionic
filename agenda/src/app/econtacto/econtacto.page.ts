@@ -17,18 +17,19 @@ export class EcontactoPage implements OnInit {
   txt_apellido:string="";
   txt_telefono:string="";
   txt_correo:string="";
+  
   public botones=[
     {
       text:'No',
       role:'alert-button-cancel',
-      handler:()=>{
+      handler: () => {
         this.cancelar();
       },
     },
     {
       text:'Si',
       role:'alert-button-confirmed',
-      handler:()=>{
+      handler: () => {
         this.eliminar();
       }, 
     },
@@ -53,9 +54,9 @@ cargarDatos()
     {
       this.contacto=res.datos;
       this.txt_nombre=this.contacto.nombre;
-      this.txt_nombre=this.contacto.apellido;
-      this.txt_nombre=this.contacto.telefono;
-      this.txt_nombre=this.contacto.correo;
+      this.txt_apellido=this.contacto.apellido;
+      this.txt_telefono=this.contacto.telefono;
+      this.txt_correo=this.contacto.correo;
     }
     else
     {

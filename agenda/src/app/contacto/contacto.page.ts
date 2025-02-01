@@ -39,8 +39,9 @@ mensaje:string="";
    });
  }
  
- cancelar()
- {}
+ cancelar(){
+  this.navCtrl.navigateRoot('/menu');
+}
 
  guardar() 
   {
