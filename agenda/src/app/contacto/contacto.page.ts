@@ -25,19 +25,19 @@ mensaje:string="";
       this.cod_persona=res;
     });
   }
- verificar_numero(){}
+ verificarnumero(){}
  
  cancelar(){}
 
  guardar() 
   {
     let datos={
-      accion:"nuevoc",
-      cod_persona:this.cod_persona,
-      nombre:this.txt_nombre,
-      apellido:this.txt_apellido,
-      telefono:this.txt_telefono,
-      correo:this.txt_correo 
+      "accion":"nuevoc",
+      "cod_persona":this.cod_persona,
+      "nombre":this.txt_nombre,
+      "apellido":this.txt_apellido,
+      "telefono":this.txt_telefono,
+      "correo":this.txt_correo 
     }
     this.servicio.postData(datos).subscribe((res:any)=>{
       if(res.estado==true)
