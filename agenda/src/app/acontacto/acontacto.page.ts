@@ -35,11 +35,11 @@ cargarDatos()
   this.servicio.postData(datos).subscribe((res:any)=>{
     if(res.estado)
     {
-      this.contacto=res.data;
+      this.contacto=res.datos;
       this.txt_nombre=this.contacto.nombre;
-      this.txt_nombre=this.contacto.apellido;
-      this.txt_nombre=this.contacto.telefono;
-      this.txt_nombre=this.contacto.correo;
+      this.txt_apellido=this.contacto.apellido;
+      this.txt_telefono=this.contacto.telefono;
+      this.txt_correo=this.contacto.correo;
     }
     else
     {
