@@ -74,6 +74,16 @@ nuevo()
 
   ngOnInit() {}
 
+  irEditar(cod_contacto:string){
+    this.navCtrl.navigateRoot(['acontacto']);
+    this.servicio.createSesion('cod_contacto',cod_contacto);
+  }
+
+  irEliminar(cod_contacto:string){
+    this.navCtrl.navigateRoot(['econtacto']);
+    this.servicio.createSesion('cod_contacto',cod_contacto);
+  }
+
   goToProfile() {
     this.navCtrl.navigateForward('/perfil');
   }

@@ -7,6 +7,8 @@ import { NavController } from '@ionic/angular';
   selector: 'app-contacto',
   templateUrl: './contacto.page.html',
   styleUrls: ['./contacto.page.scss'],
+  standalone: false,
+  
 })
 export class ContactoPage implements OnInit {
 cod_persona:string="";
