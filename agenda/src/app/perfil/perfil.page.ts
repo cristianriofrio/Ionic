@@ -12,11 +12,11 @@ import { AlertController, LoadingController, ModalController, NavController } fr
 export class PerfilPage implements OnInit {
 
   perfilForm: FormGroup;
-  usuarioId: string = '1';
   cedula: string = '';  // Inicializar como una cadena vacía
   nombre: string = '';   // Inicializar como una cadena vacía
   apellido: string = '';
   correo: string = '';   // Inicializar como una cadena vacía
+  codigo: number = 0
 
   constructor(
     private fb: FormBuilder,
@@ -40,6 +40,7 @@ export class PerfilPage implements OnInit {
   async cargarDatosSesion() {
     try {
       // Esperar a que se obtengan los valores de la sesión
+      this.codigo = Number(await this.perfilService.getSession("idpersona"));  // Asignar un valor vacío por defecto
       this.cedula = await this.perfilService.getSession("cedula") || '';  // Asignar un valor vacío por defecto
       this.nombre = await this.perfilService.getSession("nombre") || '';  // Asignar un valor vacío por defecto
       this.apellido = await this.perfilService.getSession("apellido") || '';
@@ -64,7 +65,9 @@ export class PerfilPage implements OnInit {
       return;
     }
 
-    const datos = { ...this.perfilForm.value, codigo: this.usuarioId };
+    const datos = { ...this.perfilForm.value, codigo: this.codigo };
+
+    console.log(datos)
     this.perfilService.actualizarPerfil(datos).subscribe(
       (res: any) => {
         if (res.estado) {

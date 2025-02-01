@@ -48,6 +48,7 @@ export class HomePage {
 
         // Redireccionar al menú
         this.navCtrl.navigateRoot(['/menu']);
+        console.log(res)
       } else {
         this.manejarIntentosFallidos();
       }

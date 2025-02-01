@@ -61,6 +61,7 @@ export class AccesoService {
       const item = await Preferences.get({
         key: id
       });
+      console.log(item.value)
       return item.value
     }
 
