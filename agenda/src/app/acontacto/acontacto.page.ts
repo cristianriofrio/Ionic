@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccesoService } from '../servicio/acceso.service';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-acontacto',
@@ -16,7 +18,8 @@ export class AcontactoPage implements OnInit {
   txt_telefono:string="";
   txt_correo:string="";
   constructor(
-    private servicio: AccesoService) 
+    private servicio: AccesoService,
+    private navCtrl: NavController) 
     { 
     this.servicio.getSession("cod_contacto").then((res:any)=>{
       this.cod_contacto=res;
@@ -48,6 +51,26 @@ cargarDatos()
   ngOnInit() {
   }
 
-guardar(){}
+guardar(){
+let datos={
+  "accion": "acontacto",
+  "cod_contacto":this.cod_contacto,
+  "nombre":this.txt_nombre,
+  "apellido":this.txt_apellido,
+  "telefono":this.txt_telefono,
+  "correo":this.txt_correo
+}
+this.servicio.postData(datos).subscribe((res:any)=>{
+ if(res.estado)
+ {
+  this.servicio.showToast(res.mensaje,3000);
+  this.navCtrl.navigateRoot('/menu');
+ }
+ else
+ {
+  this.servicio.showToast(res.mensaje,3000);
+ }
+});
+}
 cancelar(){}
 }
