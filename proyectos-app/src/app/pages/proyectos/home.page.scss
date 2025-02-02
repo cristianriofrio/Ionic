@@ -1,0 +1,67 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.rating {
+  display: flex;
+  gap: 8px;
+}
+
+.star {
+  font-size: 1rm;
+  cursor: pointer;
+  color: #ccc;
+}
+
+img{
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+}
+
+ion-card{
+  max-width: 300px;
+}
+
+.star.filled {
+  color: gold;
+}
+
+.text-ellipsis {
+  white-space: nowrap; /* Mantiene el texto en una sola línea */
+  overflow: hidden; /* Oculta el texto que se pasa del ancho */
+  text-overflow: ellipsis; /* Muestra "..." al final del texto */
+}
+
+ion-button {
+  --ion-color-success: #28a745; /* Color verde (puedes cambiarlo) */
+}
+
+ion-icon {
+  font-size: 24px; /* Ajustar tamaño del icono */
+}
+

@@ -1,0 +1,24 @@
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px; /* Espacio entre la imagen y el formulario */
+}
+
+.logo {
+  width: 340px; /* Aumentamos el tamaño */
+  height: auto;
+}
+
+.titulo-login {
+    text-align: center; /* Centra el texto */
+    color: #007bff; /* Azul (puedes cambiarlo según tu preferencia) */
+    font-size: 1rem; /* Aumentar tamaño */
+    font-weight: bold; /* Negrita */
+  }
+
+  .titulo-CABECERA{
+    text-align: center; /* Centra el texto */
+    color: #dc09a7; /* Azul (puedes cambiarlo según tu preferencia) */
+    font-size: 1.5rem; /* Aumentar tamaño */
+    font-weight: bold; /* Negrita */
+  }

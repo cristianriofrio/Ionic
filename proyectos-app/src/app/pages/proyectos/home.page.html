@@ -1,0 +1,40 @@
+<app-navbar [title]="'Lista de Proyectos'"></app-navbar>
+
+<ion-content>
+  <div style="display: flex; justify-content: end; padding: 10px;">
+    <ion-button color="success" (click)="agregarLibro()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <ion-row>
+    <ion-col *ngFor="let entidad of entidades" class="ion-justify-content-center" style="display: flex;">
+      <ion-card>
+
+        <ion-card-header style="display: flex; justify-content: space-between;">
+          <ion-card-title>{{ entidad.titulo }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="text-ellipsis">
+          {{ entidad.descripcion }}
+        </ion-card-content>
+
+        <ion-progress-bar [value]="entidad.progreso / 100"></ion-progress-bar>
+
+        <ion-card-content class="ion-align-items-center ion-justify-content-between" style="display: flex;">
+
+          <ion-button (click)="verDetalles(entidad)">
+            <ion-icon  name="eye"></ion-icon>
+          </ion-button>
+          <ion-button color="warning" *ngIf="validarUsuario(entidad.usuario_id)" (click)="editarLibro(entidad.id)">
+            <ion-icon  name="pencil"></ion-icon>
+          </ion-button>
+          <ion-button color="danger" (click)="eliminarLibro(entidad.id)">
+            <ion-icon  name="trash"></ion-icon>
+          </ion-button>
+        </ion-card-content>
+
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

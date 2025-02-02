@@ -1,0 +1,55 @@
+<ion-content *ngIf="proyecto">
+  <app-navbar [title]="proyecto.titulo"></app-navbar>
+
+  <ion-content>
+
+    <ion-card >
+
+      <ion-card-header>
+        <ion-card-title>{{ proyecto.titulo }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="text-ellipsis">
+        {{ proyecto.descripcion }}
+      </ion-card-content>
+
+    </ion-card>
+    <div style="display: flex; justify-content: center">
+      <h3>Tareas de este proyecto</h3>
+    </div>
+
+    <div style="display: flex; justify-content: end; margin-right: 10px">
+      <ion-button color="success"  (click)="addTarea()">Agregar tarea</ion-button>
+    </div>
+
+
+
+    <ion-col *ngFor="let entidad of tareas">
+      <ion-card >
+        <ion-card-header>
+          <ion-card-title style="display: flex; justify-content: space-between;">
+            <div>{{entidad.titulo}}</div>
+            <ion-checkbox disabled [checked]="entidad.estado"></ion-checkbox>
+          </ion-card-title>
+
+        </ion-card-header>
+
+        <ion-card-content class="ion-align-items-center ion-justify-content-around" style="display: flex; ">
+          <div>{{entidad.descripcion}}</div>
+        </ion-card-content>
+
+        <ion-card-content class="ion-justify-content-around" style="display: flex;">
+          <ion-button color="warning" (click)="editTarea(entidad.id)">
+            <ion-icon  name="pencil"></ion-icon>
+          </ion-button>
+            <ion-button color="danger" (click)="eliminarTarea(entidad.id)"><ion-icon  name="trash"></ion-icon></ion-button>
+
+        </ion-card-content>
+
+
+
+      </ion-card>
+    </ion-col>
+
+  </ion-content>
+</ion-content>
+

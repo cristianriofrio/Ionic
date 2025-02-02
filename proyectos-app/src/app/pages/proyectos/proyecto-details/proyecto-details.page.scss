@@ -1,0 +1,19 @@
+
+.rating {
+  display: flex;
+  gap: 8px;
+}
+
+.star {
+  font-size: 1rm;
+  cursor: pointer;
+  color: #ccc;
+}
+
+img{
+  max-height: 250px;
+}
+
+.star.filled {
+  color: gold;
+}

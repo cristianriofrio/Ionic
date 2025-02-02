@@ -1,0 +1,162 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Juan Pérez",
+      "correo": "juan@example.com",
+      "contraseña": "123456"
+    }
+  ],
+  "libros": [
+    {
+      "id": 1,
+      "titulo": "El principito",
+      "descripcion": "Un libro sobre un pequeño príncipe que viaja por el universo y aprende lecciones sobre la vida.",
+      "imagen": "",
+      "usuario_id": 1
+    },
+    {
+      "id": 2,
+      "titulo": "Cien años de soledad",
+      "descripcion": "Una novela que narra la historia de la familia Buendía en el pueblo ficticio de Macondo.",
+      "imagen": "",
+      "usuario_id": 2
+    },
+    {
+      "id": 3,
+      "titulo": "1984",
+      "descripcion": "Una distopía sobre un gobierno totalitario que controla todos los aspectos de la vida de los ciudadanos.",
+      "imagen": "",
+      "usuario_id": 3
+    },
+    {
+      "id": 4,
+      "titulo": "Orgullo y prejuicio",
+      "descripcion": "Una historia romántica que explora las complejidades de la clase social y las relaciones humanas.",
+      "imagen": "",
+      "usuario_id": 4
+    },
+    {
+      "id": 5,
+      "titulo": "Matar a un ruiseñor",
+      "descripcion": "Una novela que aborda temas de racismo y justicia en el sur de Estados Unidos durante la Gran Depresión.",
+      "imagen": "",
+      "usuario_id": 5
+    },
+    {
+      "id": 6,
+      "titulo": "Don Quijote de la Mancha",
+      "descripcion": "Las aventuras de un caballero loco y su fiel escudero en busca de justicia y honor.",
+      "imagen": "",
+      "usuario_id": 6
+    },
+    {
+      "id": 7,
+      "titulo": "La sombra del viento",
+      "descripcion": "Un joven encuentra un libro misterioso que lo lleva a investigar el pasado oscuro de su autor.",
+      "imagen": "",
+      "usuario_id": 7
+    },
+    {
+      "id": 8,
+      "titulo": "El alquimista",
+      "descripcion": "La historia de un joven pastor que busca su leyenda personal y el significado de la vida.",
+      "imagen": "",
+      "usuario_id": 8
+    },
+    {
+      "id": 9,
+      "titulo": "Rayuela",
+      "descripcion": "Una novela que desafía la estructura tradicional del relato, con un enfoque experimental.",
+      "imagen": "",
+      "usuario_id": 9
+    },
+    {
+      "id": 10,
+      "titulo": "El gran Gatsby",
+      "descripcion": "Un análisis de la alta sociedad estadounidense en los años 20, centrado en el misterio de Gatsby.",
+      "imagen": "",
+      "usuario_id": 10
+    },
+    {
+      "id": 11,
+      "titulo": "Harry Potter y la piedra filosofal",
+      "descripcion": "El inicio de las aventuras del joven mago Harry Potter en el mundo de la magia.",
+      "imagen": "",
+      "usuario_id": 11
+    },
+    {
+      "id": 12,
+      "titulo": "Los pilares de la tierra",
+      "descripcion": "Una épica novela histórica que sigue la construcción de una catedral en la Edad Media.",
+      "imagen": "",
+      "usuario_id": 12
+    },
+    {
+      "id": 13,
+      "titulo": "El código Da Vinci",
+      "descripcion": "Un thriller que explora secretos ocultos en obras de arte y simbolismo religioso.",
+      "imagen": "",
+      "usuario_id": 13
+    },
+    {
+      "id": 14,
+      "titulo": "La casa de los espíritus",
+      "descripcion": "Una novela que combina realismo mágico con la historia de una familia chilena a lo largo de generaciones.",
+      "imagen": "",
+      "usuario_id": 14
+    },
+    {
+      "id": 15,
+      "titulo": "El Hobbit",
+      "descripcion": "La aventura de Bilbo Bolsón en su viaje para recuperar un tesoro custodiado por un dragón.",
+      "imagen": "",
+      "usuario_id": 15
+    },
+    {
+      "id": 16,
+      "titulo": "Fahrenheit 451",
+      "descripcion": "En un futuro distópico donde los libros están prohibidos, un bombero comienza a cuestionar su papel en la sociedad.",
+      "imagen": "",
+      "usuario_id": 16
+    },
+    {
+      "id": 17,
+      "titulo": "Crónica de una muerte anunciada",
+      "descripcion": "Un relato sobre un asesinato anunciado, con una exploración profunda de la fatalidad y la moralidad.",
+      "imagen": "",
+      "usuario_id": 17
+    },
+    {
+      "id": 18,
+      "titulo": "La metáfora de la caverna",
+      "descripcion": "Un análisis filosófico sobre el conocimiento, la realidad y la libertad.",
+      "imagen": "",
+      "usuario_id": 18
+    },
+    {
+      "id": 19,
+      "titulo": "Los miserables",
+      "descripcion": "Una novela que sigue las vidas de varios personajes en el contexto de la Revolución Francesa.",
+      "imagen": "",
+      "usuario_id": 19
+    },
+    {
+      "id": 20,
+      "titulo": "En busca del tiempo perdido",
+      "descripcion": "Una obra maestra de la literatura francesa que explora la memoria y el paso del tiempo.",
+      "imagen": "",
+      "usuario_id": 20
+    }
+  ],
+
+  "resenas": [
+    {
+      "id": 1,
+      "puntuacion": 5,
+      "comentario": "Un libro increíble",
+      "libro_id": 1,
+      "usuario_id": 1
+    }
+  ]
+}
