@@ -57,11 +57,22 @@ ion-card{
   text-overflow: ellipsis; /* Muestra "..." al final del texto */
 }
 
-ion-button {
-  --ion-color-success: #28a745; /* Color verde (puedes cambiarlo) */
+.boton-agregar {
+  position: fixed;
+  bottom: 20px; /* Espacio desde la parte inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
 }
 
-ion-icon {
-  font-size: 24px; /* Ajustar tamaño del icono */
+.boton-agregar ion-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra ligera */
 }
-
