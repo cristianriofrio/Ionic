@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
 import { AccesoService } from '../servicio/acceso.service';
 import { CuentaPage } from '../cuenta/cuenta.page';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +20,25 @@ export class HomePage {
   constructor(
     private navCtrl: NavController,
     private servicio: AccesoService,
+    private toastController: ToastController,
     private modalCtrl: ModalController
   ) {}
+
+  ngOnInit() {
+    this.mostrarToastIntentos(); // Llamar al mensaje cuando se cargue la página
+  }
+
+  async mostrarToastIntentos() {
+    const toast = await this.toastController.create({
+      message: 'Tienes 3 intentos para ingresar la clave.',
+      duration: 3000, // Desaparece después de 3 segundos
+      position: 'bottom', // Ubicación en la pantalla ('top', 'middle', 'bottom')
+      color: 'warning', // Color del mensaje ('primary', 'success', 'danger', etc.)
+    });
+
+    await toast.present();
+  }
+
 
   login() {
     if (this.bloqueoActivo) {
