@@ -7,7 +7,7 @@ import { Proyecto } from '../models/proyecto';
   providedIn: 'root'
 })
 export class ProyectoService {
-  private apiUrl = 'http://localhost/proyectos-api/public'; // Cambia esto por tu URL de API
+  private apiUrl = 'http://localhost/proyectos-api/public';
 
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
