@@ -29,13 +29,18 @@
       <ion-input formControlName="correo" type="email" [(ngModel)]="correo"></ion-input>
     </ion-item>
 
+    <ion-content class="center-content">
+      <div class="button-container">
+        <ion-button type="submit" [disabled]="perfilForm.invalid" title="Guardar Cambios">
+          <ion-icon slot="icon-only" name="save-outline" class="custom-icon"></ion-icon>
+        </ion-button>
     
-
-    <ion-button expand="full" type="submit" [disabled]="perfilForm.invalid">
-      Guardar Cambios
-    </ion-button>
-    <ion-button expand="full" (click)="regresar()">
-      Cerrar
-    </ion-button>
+        <ion-button  (click)="regresar()" title="Cerrar">
+          <ion-icon slot="icon-only" name="close-outline" class="custom-icon"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-content>
+    
+    
   </form>
 </ion-content>

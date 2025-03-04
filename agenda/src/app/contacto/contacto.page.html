@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Nuevo Contacto</ion-title>
+    <ion-title>Agregra un Contacto</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-item>
-    <ion-label position="floating">Nombre:</ion-label>
+    <ion-label position="floating" >Nombre:</ion-label>
     <ion-input [(ngModel)]="txt_nombre" type="text"></ion-input>
   </ion-item>
   <ion-item>
@@ -23,7 +23,12 @@
     <ion-input [(ngModel)]="txt_correo" type="E-mail"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-button color="success" (click)="guardar();">Guardar</ion-button>
-    <ion-button color="success" (click)="cancelar();">Cancelar</ion-button>
+    <ion-button color="success" (click)="guardar();">
+      <ion-icon slot="icon-only" name="save-outline" size="large"></ion-icon>
+    </ion-button>
+  
+    <ion-button color="danger" (click)="cancelar();">
+      <ion-icon slot="icon-only" name="close-circle-outline" size="large"></ion-icon>
+    </ion-button>
   </ion-item>
 </ion-content>

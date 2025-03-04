@@ -5,22 +5,32 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-  <form *ngIf="!credencialesVerificadas" (submit)="verificarCredenciales()">
+  <form (submit)="verificarCredenciales($event)">
     <ion-item>
       <ion-input label="Cédula:" type="text" [(ngModel)]="cedula" name="cedula"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Palabra Clave:" type="password" [(ngModel)]="palabraClave" name="palabraClave"></ion-input>
+      <ion-input label="Palabra Secreta:" type="password" [(ngModel)]="palabraClave" name="palabraClave"></ion-input>
     </ion-item>
-    <ion-button expand="block" type="submit">Verificar</ion-button>
+
+    <div class="ion-text-center">
+      <ion-button type="submit" title="Verificar">
+        <ion-icon name="checkmark-circle-outline" size="large"></ion-icon>
+      </ion-button>
+    </div>
   </form>
 
-  
-  <form *ngIf="credencialesVerificadas" (submit)="actualizarClave()">
-    <ion-item>
-      <ion-input label="Nueva clave: " type="password" [(ngModel)]="nuevaClave" name="nuevaClave"></ion-input>
-    </ion-item>
-    <ion-button expand="block" type="submit" color="success">Guardar</ion-button>
-  </form>
+  <div *ngIf="credencialesVerificadas">
+    <form (submit)="actualizarClave($event)">
+      <ion-item>
+        <ion-input label="Nueva clave:" type="password" [(ngModel)]="nuevaClave" name="nuevaClave"></ion-input>
+      </ion-item>
+
+      <div class="ion-text-center">
+        <ion-button type="submit" title="Guardar">
+          <ion-icon name="save-outline" size="large"></ion-icon>
+        </ion-button>
+      </div>
+    </form>
+  </div>
 </ion-content>

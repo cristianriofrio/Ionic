@@ -8,6 +8,23 @@
   
   ion-icon {
     color: #3880ff; /* Color azul predeterminado de Ionic */
-    font-size: 80px; /* Tamaño del icono */
+    font-size: 30px; /* Tamaño del icono */
+  }
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la pantalla */
   }
   
+  .button-container {
+    display: flex;
+    gap: 5px; /* Espacio entre los botones */
+  }
+  
+  /* Estilo para los iconos */
+  .custom-icon {
+    color: rgb(226, 219, 219) !important; /* Cambia el color del icono a negro */
+    stroke: white; /* Color de las líneas internas */
+    stroke-width: 2px; /* Ajuste del grosor de las líneas */
+  }

@@ -35,3 +35,8 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+ion-item:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Color de sombra al pasar el mouse */
+    transition: background-color 0.3s ease-in-out; /* Suaviza el cambio de color */
+  }

@@ -29,17 +29,21 @@
           <ion-input label="Clave: " type="password" [(ngModel)]="txt_clave"></ion-input>
         </ion-item>
 
-        <ion-item lines="none" class="ion-text-center">
-          <ion-button (click)="login()" size="small" color="success" id="show_loading">
-            Iniciar Sesión
+        <ion-item lines="none" class="ion-text-center ion-justify-content-center">
+          <ion-button (click)="login()" size="small" color="success" id="show_loading" title="Ingresar">
+            <ion-icon slot="icon-only" name="log-in-outline"></ion-icon>
           </ion-button>
-          <ion-button (click)="crearCuenta()" size="small" color="warning">
-            Crear cuenta
+        
+          <ion-button (click)="crearCuenta()" size="small" color="warning" title="Crear cuenta">
+            <ion-icon slot="icon-only" name="person-add-outline"></ion-icon>
           </ion-button>
-          <ion-button (click)="restablecerClave()" size="small" color="primary">
-            Cambiar Clave
+        
+          <ion-button (click)="restablecerClave()" size="small" color="primary" title="Cambiar clave">
+            <ion-icon slot="icon-only" name="key-outline"></ion-icon>
           </ion-button>
         </ion-item>
+        
+
       </ion-card-content>
     </ion-card>
   </div>

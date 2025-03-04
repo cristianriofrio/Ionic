@@ -28,7 +28,15 @@
     <ion-input label="Palabra Clave: " type="text" [(ngModel)]="txt_palabraClave"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-button class="success" expand="block" (click)="registrar()">Registrar</ion-button>
-    <ion-button class="secondary" expand="block" (click)="cancelar()">Cancelar</ion-button>
+
+<ion-button class="success" expand="block" (click)="registrar()" title="Registrar">
+  <ion-icon name="save-outline" size="large"></ion-icon>
+</ion-button>
+
+<ion-button class="secondary" expand="block" (click)="cancelar()" title="Cancelar">
+  <ion-icon name="close-outline" size="large"></ion-icon>
+</ion-button>
+
+
   </ion-item>
 </ion-content>

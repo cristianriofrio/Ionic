@@ -30,7 +30,7 @@
     </ion-toolbar>
   </ion-header>
 
- <ion-fab slot="fixed" vertical="top" horizontal="end">
+ <ion-fab slot="fixed" vertical="bottom" horizontal="center">
   <ion-fab-button (click)="nuevo();">
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
@@ -39,21 +39,28 @@
 
   <ion-content [fullscreen]="true">
     <ion-list>
-      <ion-item-sliding *ngFor="let fila of contactos"> 
-      <ion-item>
-        <ion-avatar>
-          <img src="assets/imgs/person.png">
-        </ion-avatar>
-        <ion-label>
-          <b> Nombre:</b> {{fila.nombre}} <br>
-          <b> Telefono:</b> {{fila.telefono}}
-        </ion-label>
-      </ion-item>
-    <ion-item-options>
-      <ion-item-option color="warning" (click)="irEditar(fila.codigo)">Editar</ion-item-option>
-      <ion-item-option color="danger" (click)="irEliminar(fila.codigo)">Eliminar</ion-item-option>
-    </ion-item-options>
-    </ion-item-sliding>
+      <ion-item-sliding *ngFor="let fila of contactos">
+        <ion-item>
+          <ion-avatar>
+            <img src="assets/imgs/person.png">
+          </ion-avatar>
+          <ion-label style="margin-left: 8px;">
+            <b> Nombre:</b> {{fila.nombre}} <br>
+            <b> Teléfono:</b> {{fila.telefono}}
+          </ion-label>
+        </ion-item>
+    
+        <ion-item-options>
+          <ion-item-option color="warning" (click)="irEditar(fila.codigo)" title="Editar">
+            <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+          </ion-item-option>
+          
+          <ion-item-option color="danger" (click)="irEliminar(fila.codigo)" title="Eliminar">
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
     </ion-list>
+    
     </ion-content>
  

@@ -22,8 +22,13 @@
     <ion-input [(ngModel)]="txt_correo" type="E-mail"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-button color="danger" id="mostrar-alerta">Eliminar</ion-button>
-    <ion-button color="warning" (click)="cancelar();">Cancelar</ion-button>
+    <ion-button color="danger" id="mostrar-alerta" title="Eliminar">
+      <ion-icon slot="icon-only" name="trash-outline" size="large"></ion-icon>
+    </ion-button>
+    
+    <ion-button color="warning" (click)="cancelar();" title="Cancelar">
+      <ion-icon slot="icon-only" name="close-circle-outline" size="large"></ion-icon>
+    </ion-button>   
   </ion-item>
   <ion-alert
     trigger="mostrar-alerta"

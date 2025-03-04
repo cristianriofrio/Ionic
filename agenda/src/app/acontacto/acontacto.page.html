@@ -22,7 +22,13 @@
     <ion-input [(ngModel)]="txt_correo" type="E-mail"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-button color="success" (click)="guardar();">Guardar</ion-button>
-    <ion-button color="success" (click)="cancelar();">Cancelar</ion-button>
+    <ion-button color="success" (click)="guardar();" title="Guardar">
+      <ion-icon slot="icon-only" name="save-outline" size="large"></ion-icon>
+    </ion-button>
+    
+    <ion-button color="danger" (click)="cancelar();" title="Cancelar">
+      <ion-icon slot="icon-only" name="close-circle-outline" size="large"></ion-icon>
+    </ion-button>
+    
   </ion-item>
 </ion-content>

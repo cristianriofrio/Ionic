@@ -10,7 +10,7 @@ import { AccesoService } from '../servicio/acceso.service';
 })
 export class RclavePage {
   cedula: string = "";
-  palabraClave: string = ""; // Ahora es token_recuperacion en la BD
+  palabraClave: string = "";
   nuevaClave: string = "";
   credencialesVerificadas: boolean = false;
 
@@ -19,8 +19,9 @@ export class RclavePage {
     private servicio: AccesoService
   ) {}
 
-  // Verifica la cédula y la palabra clave antes de permitir cambiar la contraseña
-  verificarCredenciales() {
+  verificarCredenciales(event: Event) {
+    event.preventDefault();
+
     let datos = {
       accion: 'verificarCredenciales',
       cedula: this.cedula,
@@ -31,13 +32,15 @@ export class RclavePage {
       if (res.estado) {
         this.credencialesVerificadas = true;
       } else {
-        this.servicio.showToast("Cédula o palabra clave incorrecta.", 3000);
+        this.credencialesVerificadas = false;
+        this.servicio.showToast("Cédula o palabra secreta incorrecta.", 3000);
       }
     });
   }
 
-  // Cambia la contraseña en la base de datos
-  actualizarClave() {
+  actualizarClave(event: Event) {
+    event.preventDefault(); 
+
     if (this.nuevaClave.length < 4) {
       this.servicio.showToast("La nueva clave debe tener al menos 4 caracteres.", 3000);
       return;
@@ -51,7 +54,7 @@ export class RclavePage {
 
     this.servicio.postData(datos).subscribe((res: any) => {
       if (res.estado) {
-        this.servicio.showToast("Actualizada con éxito.", 3000);
+        this.servicio.showToast("Clave actualizada con éxito.", 3000);
         this.navCtrl.navigateRoot('/home');
       } else {
         this.servicio.showToast("Error al actualizar", 3000);
